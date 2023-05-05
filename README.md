@@ -1,74 +1,142 @@
-# Module 19 Mini-Project: Deploy Contact Directory App on Heroku with Script
+# 19 Progressive Web Applications (PWA): Text Editor
 
-In this mini-project, you are given a simple application that needs to be updated to use webpack, service workers, and IndexedDB. In addition, it must have PWA functionality in order to work properly. Once you have updated the application with these new features, you will deploy it to Heroku. Heroku is not new to you, but you will need to add a handful of special scripts so that it knows to deploy your bundled application.
+## Your Task
 
-## User Stories
+As you have progressed through this course, you have put together a number of impressive projects that you can show off to potential employers. This project is no exception; in fact, it features some of the most impressive expressions of the concepts you have learned so far.
 
-Work with your group to resolve the following issues:
+Your task is to build a text editor that runs in the browser. The app will be a single-page application that meets the PWA criteria. Additionally, it will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
 
-* As a user, I want to be able to install the web application as a PWA.
+To build this text editor, you will start with an existing application and implement methods for getting and storing data to an IndexedDB database. You will use a package called `idb`, which is a lightweight wrapper around the IndexedDB API. It features a number of methods that are useful for storing and retrieving data, and is used by companies like Google and Mozilla.
 
-* As a user, I want to be able to add and remove my contact cards.
+You will deploy this full-stack application to Heroku using the [Heroku Deployment Guide on The Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/heroku/heroku-deployment-guide).
 
-* As a developer, I want all my scripts to run from the root directory `package.json`.
+## User Story
 
-* As a developer, I want to be able to run `npm run start:dev` in the command line and have both my client and server start.
-
-* As a developer, I want to be able to run `npm run start` in the command line to run our build script and start our server.
-
-* As a developer, I want to be able to run `npm run server` in the command line and have just our server start without the client.
-
-* As a developer, I want to be able to run `npm run build` in the command line and have our client run the webpack build script.
-
-* As a developer, I want to be able to run `npm run install` in the command line and have all of the client's dependencies installed.
-
-* As a developer, I want to be able to run `npm run client` in the command line and have just our client start without the server.
+```md
+AS A developer
+I WANT to create notes or code snippets with or without an internet connection
+SO THAT I can reliably retrieve them for later use
+```
 
 ## Acceptance Criteria
 
-The mini-project is complete when the following criteria are met:
+```md
+GIVEN a text editor web application
+WHEN I open my application in my editor
+THEN I should see a client server folder structure
+WHEN I run `npm run start` from the root directory
+THEN I find that my application should start up the backend and serve the client
+WHEN I run the text editor application from my terminal
+THEN I find that my JavaScript files have been bundled using webpack
+WHEN I run my webpack plugins
+THEN I find that I have a generated HTML file, service worker, and a manifest file
+WHEN I use next-gen JavaScript in my application
+THEN I find that the text editor still functions in the browser without errors
+WHEN I open the text editor
+THEN I find that IndexedDB has immediately created a database storage
+WHEN I enter content and subsequently click off of the DOM window
+THEN I find that the content in the text editor has been saved with IndexedDB
+WHEN I reopen the text editor after closing it
+THEN I find that the content in the text editor has been retrieved from our IndexedDB
+WHEN I click on the Install button
+THEN I download my web application as an icon on my desktop
+WHEN I load my web application
+THEN I should have a registered service worker using workbox
+WHEN I register a service worker
+THEN I should have my static assets pre cached upon loading along with subsequent pages and static assets
+WHEN I deploy to Heroku
+THEN I should have proper build scripts for a webpack application
+```
 
-* The application uses webpack for bundling.
+## Mock-Up
 
-* The application uses a service worker to cache static assets.
+The following animation demonstrates the application functionality:
 
-* The application uses IndexedDB GET, ADD, and DELETE methods.
+![Demonstration of the finished Module 19 Challenge being used in the browser and then installed.](./Assets/00-demo.gif)
 
-* The application uses object store for async/await.
+The following image shows the application's `manifest.json` file:
 
-* The application uses CSS loaders.
+![Demonstration of the finished Module 19 Challenge with a manifest file in the browser.](./Assets/01-manifest.png)
 
-* Scripts are placed in the root and client directory's `package.json`.
+The following image shows the application's registered service worker:
 
-* `npm run start:dev` starts both the client and server.
+![Demonstration of the finished Module 19 Challenge with a registered service worker in the browser.](./Assets/02-service-worker.png)
 
-* `npm run start` runs the `build` script and starts the server.
+The following image shows the application's IndexedDB storage:
 
-* `npm run server` starts just the server and not the client.
+![Demonstration of the finished Module 19 Challenge with a IndexedDB storage named 'jate' in the browser.](./Assets/03-idb-storage.png)
 
-* `npm run build` runs the webpack build script in the client.
+## Grading Requirements
 
-* `npm run install` installs the dependencies for the client.
+> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
+>
+> * A repository that has no code
+>
+> * A repository that includes a unique name but nothing else
+>
+> * A repository that includes only a README file but nothing else
+>
+> * A repository that only includes starter code
 
-* `npm run client` starts the client without the server.
+This Challenge is graded based on the following criteria:
 
-* The web application can be installed from the web address provided by Heroku.
+### Technical Acceptance Criteria: 40%
 
-* The web application is deployed using Heroku.
+* Satisfies all of the above acceptance criteria plus the following:
 
----
+  * Uses IndexedDB to create an object store and includes both GET and PUT methods
 
-## 💡 Hints
+  * The application works without an internet connection
 
-* How do you navigate to different directories inside bash?
+  * Automatically saves content inside the text editor when the DOM window is unfocused
 
-* What is the operator for "and"?
+  * Bundled with webpack
 
-## 🏆 Bonus
+  * Create a service worker with workbox that Caches static assets
 
-If you have completed this activity, work through the following challenge with your partner to further your knowledge:
+  * The application should use babel in order to use async / await
 
-* Incorporate a way to edit information on the contact card using a PUT method with IndexedDB.
+  * Application must have a generated `manifest.json` using the `WebpackPwaManifest` plug-in
 
----
+  * Can be installed as a Progressive Web Application
+
+### Deployment: 32%
+
+* Application deployed to Heroku at live URL with build scripts
+
+* Application loads with no errors
+
+* Application GitHub URL submitted
+
+* GitHub repo contains application code
+
+### Application Quality: 15%
+
+* Application user experience is intuitive and easy to navigate
+
+* Application user interface style is clean and polished
+
+* Application resembles the mock-up functionality provided in the Challenge instructions
+
+### Repository Quality: 13%
+
+* Repository has a unique name
+
+* Repository follows best practices for file structure and naming conventions
+
+* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+
+* Repository contains multiple descriptive commit messages
+
+* Repository contains quality README file with description, screenshot, and link to deployed application
+
+## Review
+
+You are required to submit the following for review:
+
+* The URL of the deployed application
+
+* The URL of the GitHub repository, with a unique name and a README describing the project
+
+- - -
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
