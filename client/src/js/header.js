@@ -6,7 +6,7 @@ _____     __      ________
 | |  | |/ /\ \ \/ / |  __|  
 | |__| / ____ \  /  | |____ 
 |_____/_/    \_\/   |______|
-not just another text editor
+just another text editor
 */                          
 `;
 
