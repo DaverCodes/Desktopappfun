@@ -37,8 +37,8 @@ module.exports = () => {
         name: 'Progressive Web App',
         short_name: 'PWA',
         description: 'NoteTaker',
-        background_color: '#',
-        theme_color: '#',
+        background_color: 'grey',
+        theme_color: 'blue',
         start_url: './',
         publicPath: './',
         icons: [
