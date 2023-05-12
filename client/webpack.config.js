@@ -23,7 +23,7 @@ module.exports = () => {
       // Webpack plugin that generates our html file and injects our bundles. 
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Progressive Web App'
+        title: 'Pogressive Web Appr'
       }),
      
       // Injects our custom service worker
@@ -39,8 +39,8 @@ module.exports = () => {
         name: 'Progressive Web App',
         short_name: 'PWA',
         description: 'NoteTaker',
-        background_color: 'grey',
-        theme_color: 'blue',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
         start_url: './',
         publicPath: './',
         icons: [

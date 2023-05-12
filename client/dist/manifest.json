@@ -37,6 +37,6 @@
   "display": "standalone",
   "start_url": "./",
   "description": "NoteTaker",
-  "background_color": "grey",
-  "theme_color": "blue"
+  "background_color": "#225ca3",
+  "theme_color": "#225ca3"
 }
