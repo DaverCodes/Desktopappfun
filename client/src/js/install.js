@@ -4,6 +4,8 @@ const butInstall = document.getElementById('buttonInstall');
 // Add an event handler to the `beforeinstallprompt` event
 window.addEventListener('beforeinstallprompt', (event) => {
 
+  // google beforeinstallprompt
+
     // Store the triggered events
     window.deferredPrompt = event;
 
@@ -27,10 +29,14 @@ butInstall.addEventListener('click', async () => {
     window.deferredPrompt = null;
     
     butInstall.classList.toggle('hidden', true);
+    // if app added to windows === app installed
+    // if app installed PREVIOUSLY === true then "app already installed!"
   });
 
 // TODO: T1
 window.addEventListener('appinstalled', (event) => {
   // Clear prompt
+
+  // is this doing anything?
   window.deferredPrompt = null;
 }); 
