@@ -30,8 +30,6 @@ const result = await request;
 console.log('🚀 - data saved to the database', result);
 };
 
-
-// TODO: T1
 export const getDb = async () => {
   console.log('GET from the database');
 
@@ -50,7 +48,7 @@ export const getDb = async () => {
   // Get confirmation of the request.
   const result = await request;
   console.log('result.value', result);
-  return result;
+  return result?.value;
 };
 
 
