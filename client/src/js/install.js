@@ -33,7 +33,6 @@ butInstall.addEventListener('click', async () => {
     // if app installed PREVIOUSLY === true then "app already installed!"
   });
 
-// TODO: T1
 window.addEventListener('appinstalled', (event) => {
   // Clear prompt
 
