@@ -25,12 +25,12 @@ export const putDb = async (content) => {
   const store = tx.objectStore('jate');
 
   // Call the .add() method to add the data to the object store.
-  const addedId = await store.add({ value: content });
+  const addedId = store.put({id: 1, value: content });
 
   // Wait for the transaction to complete.
-  await tx.complete;
+  const result = await addedId
 
-  console.log('🚀 - data saved to the database with ID', addedId);
+  console.log('🚀 - data saved to the database with ID', result.value);
 };
 
 export const getDb = async () => {
