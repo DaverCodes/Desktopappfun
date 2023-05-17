@@ -10,9 +10,9 @@ module.exports = () => {
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js',
-      database: './src/js/database.js',
-      editor: './src/js/editor.js',
-      header: './src/js/header.js'
+      // database: './src/js/database.js',
+      // editor: './src/js/editor.js',
+      // header: './src/js/header.js'
     },
     // Output for our bundles
     output: {
@@ -42,7 +42,7 @@ module.exports = () => {
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: './',
-        publicPath: './',
+        publicPath: '/',
         icons: [
 
           {
