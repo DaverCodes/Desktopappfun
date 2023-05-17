@@ -25,7 +25,7 @@ module.exports = () => {
         template: './index.html',
         title: 'Pogressive Web Appr'
       }),
-     
+
       // Injects our custom service worker
       new InjectManifest({
         swSrc: './src-sw.js',
